@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<style>body {
+  width: 100%;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+  img {
+    width: 100%;
+  }
+
+  .siema {
+    margin: 1rem 0;
+  }
+</style>
+<div class="siema" id="lolkek">
+  <div><img src="https://via.placeholder.com/450" alt="Siema image" /></div>
+  <div><img src="https://via.placeholder.com/451" alt="Siema image" /></div>
+  <div><img src="https://via.placeholder.com/452" alt="Siema image" /></div>
+  <div><img src="https://via.placeholder.com/453" alt="Siema image" /></div>
+  <div><img src="https://via.placeholder.com/454" alt="Siema image" /></div>
+  <div><img src="https://via.placeholder.com/455" alt="Siema image" /></div>
+</div>
+<div class="siema" id="lolkek2">
+  <div><img src="https://via.placeholder.com/450" alt="Siema image" /></div>
+  <div><img src="https://via.placeholder.com/451" alt="Siema image" /></div>
+  <div><img src="https://via.placeholder.com/452" alt="Siema image" /></div>
+  <div><img src="https://via.placeholder.com/453" alt="Siema image" /></div>
+  <div><img src="https://via.placeholder.com/454" alt="Siema image" /></div>
+  <div><img src="https://via.placeholder.com/455" alt="Siema image" /></div>
+</div>
+
+<button class="prev">Prev</button>
+<button class="next">Next</button>
+<button class="goto">Go to 2</button>
+<button class="destroy">destroy</button>
+<script src="./siema.js"></script>
+<script>
+  function onInitCallback() {
+    console.log('Siema initialised bro :)');
+  }
+
+  function onChangeCallback() {
+    console.log(`The index of current slide is: ${this.currentSlide}`);
+  }
+
+  const mySiema = new Siema({
+    // onInit: onInitCallback,
+    // onChange: onChangeCallback,
+    selector: '#lolkek',
+    loop: true,
+    perPage: 2,
+    startIndex: 2
+  });
+  const mySiema2 = new Siema({
+    // onInit: onInitCallback,
+    // onChange: onChangeCallback,
+    selector: '#lolkek2',
+    loop: true,
+    perPage: 1,
+    startIndex: 0
+  });
+
+
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+  const goTo = document.querySelector('.goto');
+  const destroy = document.querySelector('.destroy');
+
+  prev.addEventListener('click', () => mySiema.prev());
+  next.addEventListener('click', () => mySiema.next());
+  goTo.addEventListener('click', () => mySiema.goTo(5));
+  destroy.addEventListener('click', () => mySiema.destroy());
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "diema",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "flow": "flow"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-flow": "^7.0.0",
+    "@types/jest": "^24.0.17",
+    "cssnano": "^4.1.10",
+    "flow-bin": "^0.104.0",
+    "jest": "^24.8.0",
+    "jsdom": "^15.1.1",
+    "lodash": "^4.17.15",
+    "prettier": "^1.18.2"
+  },
+  "jest": {
+    "verbose": true,
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js)$": "./node_modules/babel-jest"
+    }
+  }
+}
